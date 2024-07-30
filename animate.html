@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="animate.css">
+<script src="jquery.js.js"></script>
+</head>
+<body>
+  <div id="box">
+    <h2>Test Box</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, ipsa.</p>
+  </div>
+  <br>
+  <button id="fadeOutBtn">fadeOut</button>
+  <button id="fadeInBtn">fadeIn</button>
+  <button id="fadeToggleBtn">fadeToggle</button>
+  <button id="fadeToBtn">FadeTo</button>
+  <br><br>
+  <div id="box1">Test Box1</div><br><br>
+  <button id="animateBtn">Animate</button>
+  <script>
+    $(document).ready(function(){
+      $("#fadeOutBtn").click(function(){
+        $("#box").fadeOut(3000,function(){
+          console.log("Now it is hidden"); 
+        })
+      });
+
+
+      $(document).ready(function(){
+      $("#fadeInBtn").click(function(){
+        $("#box").fadeIn(3000);
+      });
+    });
+
+    $(document).ready(function(){
+      $("#fadeToggleBtn").click(function(){
+        $("#box").fadeToggle(3000);
+      });
+    });
+
+    $(document).ready(function(){
+      $("#fadeToBtn").click(function(){
+        $("#box").fadeTo(3000,0.5,function(){
+          console.log("this is fedto method");
+        });
+      });
+    });
+  });
+    //practice
+   $(document).ready(function(){
+    $("#animateBtn").click(function(){
+      $("#box1").animate({left: '150px'} , "slow");
+      $("#box1").animate({width: '+=100px'});
+      $("#box1").animate({fontSize: '35px'});
+      
+    })
+  });
+     
+  </script>
+</body>
+</html>

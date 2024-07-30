@@ -1,0 +1,90 @@
+#box{
+  padding: 10px;
+  border: 1px solid #000;
+}
+.first{
+  background-color: thistle;
+}
+.second{
+  background-color: aquamarine;
+}
+.normal{
+  padding: 20px;
+    font-size: 18px;
+    background-color: yellow;
+}
+#add_button{
+  padding: 0 10px;
+  height: 50px;
+  width: 200px;
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: none;
+  background-color: #27ae61;
+  border: 1px solid #27ae61;
+  transition: 0.5s;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  min-width: 189px;
+  vertical-align: middle;
+}
+#remove_button{
+  padding: 0 10px;
+  height: 50px;
+  width: 200px;
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: none;
+  background-color: #27ae61;
+  border: 1px solid #27ae61;
+  transition: 0.5s;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  min-width: 189px;
+  vertical-align: middle;
+}
+#toggle_button{
+  padding: 0 10px;
+  height: 50px;
+  width: 200px;
+  max-width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: none;
+  background-color: #27ae61;
+  border: 1px solid #27ae61;
+  transition: 0.5s;
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  min-width: 189px;
+  vertical-align: middle;
+}
+.addClass1{
+  background-color: aquamarine;
+  font-size: small;
+}
+body{
+  font-family: arial;
+
+}
+#box1{
+  padding: 10px;
+  border: 1px solid #000;
+}
+.boxbg{
+  background: #27ae61;
+}

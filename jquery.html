@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script> -->
+  <link rel="stylesheet" href="jquery.css">
+</head>
+<body>
+  <h1>Implementation</h1>
+  <!-- <div id="test1"><h2>Test Box-1</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, eos.</p>
+  </div><br><br><br> -->
+ 
+  <div id="test2"><h2>Test Box-2</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est, eos.</p>
+
+  </div>
+  <ul id="list">
+    <li>Orange</li>
+    <li class="test">Banana</li>
+    <li>Grapes</li>
+    <li class="test">Apple</li>
+    <li>Guava</li>
+  </ul>
+  <div class="example">1</div>
+  <div class="example">2</div>
+  <div class="example">3</div>
+  <button id="hide">Hide</button>
+  <p id="sample_text">Use this paragraph to test the html method.</p>
+
+<p id="sample-text-only">Use this paragraph to test the text method. </p>
+<a href="https://www.google.com" id="hrefff">Google</a><br><br>
+
+
+<img src="https://static.memrise.com/img/400sqf/from/uploads/course_photos/3146044000171223183557.png" alt="forest" width="284" height="213"><br>
+
+<button>Set the width attribute of the image</button>
+
+<div id="box">
+  <h2>Text Box</h2>
+  <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Fugit, soluta!</p>
+</div>
+<button id="emptyBtn">Empty</button>
+<button id="removeBtn">Remove</button>
+
+<!-- Mouse Events -->
+<h1>Mouse Events</h1>
+<div id="boxx">
+  <h2>Text Box</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, voluptate?</p>
+</div>
+<!-- keyboard Event -->
+<h1>Keyboard Events</h1>
+<div id="boxxx">
+  <h2>Text Box</h2>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi, voluptate?</p>
+</div>
+
+<!-- Form Events -->
+<h1>Form Events</h1>
+<form action="" id="sform">
+  <label for="">Name </label>
+  <input type="email" id="sname"><br><br>
+<label for="">Class</label>
+<input type="text" id="sclass"><br><br>
+<label for="">Country</label>
+<select name="" id="scountry">
+<option name="" id="" value="Pakistan">Pakistan</option>
+<option name="" id="" value="India">India</option>
+<option name="" id="" value="Bangladesh">Bangladesh</option>
+<option name="" id="" value="Sirilankha">Sirilanka</option>
+</select><br><br>
+<input type="submit">
+</form>
+<div style="border: 1px solid red; margin-top: 20px; " id="d1"></div>
+<!-- jquey code -->
+  <script src="jquery.js.js"></script>
+  <script>
+   $(document).ready(function(){
+    $( "ul li:lt(2)").css( "border","2px solid red");
+   });
+   $("#hide").click(function(){
+$(".example").hide();
+   })
+
+
+  var content =  $("#sample_text").html();
+   console.log(content);
+   $("#sample_text").html("New content");
+   content = $("#sample_text").html();
+    console.log(content);
+
+var text_content = $("#sample-text-only").text();
+console.log(text_content);
+text_content = $("#sample-text-only").css("color","red");
+console.log(text_content  + "color is changed");
+
+var url_link = $("#link-element").attr("https://www.google.com");
+    console.log(url_link);
+$("hrefff").attr("https://www.google.com","https://www.udemy.com");
+ url_link = $("#hrefff").attr("href")
+console.log(url_link);
+
+
+$("button").click(function(){
+  $("img").attr("width","500")
+  $("img").attr("src","https://cdn.tutsplus.com/net/uploads/2013/12/managing-async-nodejs-retina-preview.png")
+});
+
+//empty()
+$("#emptyBtn").click(function(){
+  $('#box').empty();
+  
+});
+$("#removeBtn").click(function(){
+  $('#box').remove();
+});
+//mouse events
+
+$("#boxx").click(function(){
+  $("#boxx").css("background-color","blue")
+});
+$("#boxx").dblclick(function(){
+  $("#boxx").css("background-color","orange")
+});
+$("#boxx").contextmenu(function(){
+  $("#boxx").css("background-color","green")
+});
+$("#boxx").mouseenter(function(){
+  $("#boxx").css("background-color","tan")
+});
+$("#boxx").mouseleave(function(){
+  $("#boxx").css("background-color","purple")
+});
+// keyboard events
+// $("body").keypress(function(){
+//   $(this).css("background-color","pink");
+// });
+$("body").keyup(function(){
+  $(this).css("background-color","green");
+});
+$("body").keydown(function(){
+  $(this).css("background-color","yellow");
+});
+
+//Forms events
+$("#sname ,#sclass , #scountry").focus(function(){
+  $(this).css("background-color","lime")
+});
+$("#sname ,#sclass").blur(function(){
+  $(this).css("background-color","")
+});
+
+$("#scountry").change(function(){
+  $(this).css("background-color","pink")
+  var a= $(this).val();
+  $("#d1").html(a);
+});
+
+$("#sname ,#sclass").select(function(){
+  $(this).css("background-color","pink")
+});
+
+$("#sform").submit(function(){
+ alert("form submitted");
+});
+
+
+  </script>
+  
+</body>
+</html>

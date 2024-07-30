@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="jquery.js.js"></script>
+  <link rel="stylesheet" href="form.css">
+</head>
+<body>
+  <div id="box" class="test abc">
+    <h2>Test Box</h2>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Itaque, velit?</p>
+  </div>
+  <button id="clickButton">Set value</button>
+  <!-- <form action="" id="sform">
+    <label for="">Name </label>
+    <input type="text" id="sname"><br><br>
+  <label for="">Class</label>
+  <input type="text" id="sclass"><br><br>
+  <label for="">Country</label>
+  <select name="" id="scountry">
+  <option name="" id="" value="Pakistan">Pakistan</option>
+  <option name="" id="" value="India">India</option>
+  <option name="" id="" value="Bangladesh">Bangladesh</option>
+  <option name="" id="" value="Sirilankha">Sirilanka</option>
+  </select><br><br>
+  <input type="submit">
+  </form> -->
+  <form action="">
+    <select name="" id="options">
+      <option value="opt1">Mountain</option>
+      <option value="opt2">Beach</option>
+      <option value="opt3">City</option>
+    </select>
+  </form>
+  <!-- Radio Button -->
+  <span><input type="radio" name="gender" value="M" checked> Male</span><br>
+  <span><input type="radio" name="gender" value="F"> Female</span><br>
+  <span><input type="radio" name="gender" value="NONE"> Not informed</span>
+
+<!-- Check Boxes -->
+<form action="">
+  <span><input type="checkbox" name="intrest" value="DFE">Front-End Development</span><br>
+  <span><input type="checkbox" name="intrest" value="DBE">Back-End Development</span><br>
+  <span><input type="checkbox" name="intrest" value="Design">Web Design</span><br>
+</form>
+
+  <script>
+    $(document).ready(function(){
+     var a=  $('#box').html();
+console.log(a);
+$('#sform').submit(function(){
+ var name =  $('#sname').val();
+ var className = $("#sclass").val();
+ alert("Hello"  +  name + "class" + className)
+});
+$("#clickButton").click(function(){
+      $("#box h2").text("Hello i am Aqsa");
+      $("#box p").text("Hello i am Aqsa i am learning jquery for the very first time");
+      
+    });
+
+
+    var selectedValue = $('#options').val();
+    console.log(selectedValue);
+
+    $("#options").change(function(){
+        var newValue = $("#options option:selected").text();
+        console.log(newValue);
+    });
+
+    // Radio Button
+    $("input[name= 'gender']").change(function(){
+      var newRadioSelected = $("input[name='gender']:checked").parent("span").text();
+    console.log(newRadioSelected);
+    });
+    //Check Box
+    $("input[name = 'intrest']").change(function(){
+      var selectedCheckboxes = $("input[name = 'intrest']:checked");
+      var texts = [];
+      $.each(selectedCheckboxes, function( index, value ) {
+            
+            texts.push($(value).parent("span").text());
+        
+        });
+        
+        console.log(texts);
+        
+    })
+
+    
+
+
+    });
+
+
+  
+  </script>
+</body>
+</html>

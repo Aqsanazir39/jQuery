@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="effect.css">
+<script src="jquery.js.js"></script>
+</head>
+<body>
+  <h1>jQuery hide & show methods</h1>
+  <div id="box">
+    <h2>Test Box</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, ipsa.</p>
+  </div>
+  <br>
+  <button id="hidebtn">Hide</button>
+  <button id="showbtn">Show</button>
+<br><br>
+
+  <button id="hide-button">Hide</button>
+  <div id="box1">
+    <h2>Test Box</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, ipsa.</p>
+  </div><br><br>
+<!-- example -->
+<div class="tabs">
+  <div class="title-area">
+    <div id="tab-title">Tab-title</div>
+    <div id="toggle-tab"><svg width="14px" height="9px" viewBox="0 0 14 9" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+      <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+          <g id="Tutorial_800" transform="translate(-392.000000, -1170.000000)" fill-rule="nonzero" stroke="#FFFFFF" stroke-width="2">
+              <g id="Group-2" transform="translate(320.000000, 1158.000000)">
+                  <polyline id="Path-3" points="73 19.2603762 79.1481559 13 85 19.2603762"></polyline>
+              </g>
+          </g>
+      </g>
+  </svg></div>
+  </div>
+  <div id="tab-content">
+    Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque aliquid magni facere natus voluptatibus officiis iure quia delectus saepe impedit sed unde veritatis animi, nihil sunt soluta maiores ratione molestias!
+  </div>
+</div><br><br>
+<!-- Animate -->
+<button id="animate">Enlarge the square</button><br><br>
+<div id="square"></div>
+
+  <script>
+    $(document).ready(function(){
+      $("#hidebtn").click(function(){
+        $("#box ").hide("slow");
+      });
+
+      $("#showbtn").click(function(){
+        $("#box ").show();
+      });
+// $("#hide-button").click(function(){
+//   $(this).hide(2000, function(){
+//     $('#box1').show("#box1");
+//   });
+// });
+
+$( "#hide-button" ).click(function() {
+        $(this).hide(2000);
+        $("#box1").show();
+        
+    });
+    $("#toggle-tab").click(function(){
+      $("#tab-content").toggle();
+      $("#toggle-tab").toggleClass("flip");
+    });
+
+    $("#toggle-tab").click(function() {
+
+$("#tab-content").slideToggle(500);
+$("#toggle-tab").toggleClass("flip");
+    });
+
+//     $("#toggle-tab").click(function() {
+
+// $("#tab-content").slideDown(500);
+// $("#toggle-tab").toggleClass("flip");
+// });
+
+// $("#toggle-tab").click(function() {
+
+// $("#tab-content").slideUp(500);
+// $("#toggle-tab").toggleClass("flip");
+// });
+
+//fade mathods
+$("#toggle-tab").click(function() {
+
+$("#tab-content").fadeToggle();
+$("#toggle-tab").toggleClass("flip");
+
+});
+
+$("#animate").click(function(){
+
+$("#square").animate({
+    width: '+=20px'
+},500);
+
+$("#square").animate({
+    height: '+=20px'
+}),500;
+
+});
+    
+  });
+
+  </script>
+</body>
+</html>

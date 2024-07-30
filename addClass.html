@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<link rel="stylesheet" href="addClass.css">
+<script src="jquery.js.js"></script>
+<body>
+  <div id="box">
+    <h2>Test Box</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, ipsa.</p>
+  </div>
+  <br>
+  <button id="addbutton">Add Class</button>
+  <button id="removebutton">Remove Class</button>
+  <button id="togglebutton">Toggle Class</button><br><br>
+
+<h1>AddClass() removeClass() toggleClass() Methods</h1>
+  <p class="normal" id="example-paragraph"> This paragraph has the class "normal". Let,s add the "styling"</p>
+  <button id="add_button">Add Class</button>
+  <button id="remove_button">Remove Class</button>
+  <button id="toggle_button">Toggle Class</button>
+  <!-- On()Method -->
+  <div id="box1">
+    <h2>Test Box</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt, ipsa.</p>
+  </div>
+  <script>
+    $(document).ready(function(){
+      $('#addbutton').click(function(){
+$('#box').addClass("first second");
+      });
+      $("#removebutton").click(function(){
+        $('#box').removeClass("first second");
+      });
+      $("#togglebutton").click(function(){
+        $("#box").toggleClass('first second');
+      });
+     
+      // example
+      $('#add_button').click(function(){
+        $('#example-paragraph').addClass("addClass1");
+      });
+      $('#remove_button').click(function(){
+        $('#example-paragraph').removeClass("addClass1");
+      });
+      $('#toggle_button').click(function(){
+        $('#example-paragraph').toggleClass("addClass1");
+    });
+// On()Method
+$("#box1").on({
+  "click" : function(){
+$(this).css("background","pink");
+  },
+  "mouseover" : function(){
+    $(this).css("background","lightgreen");
+  }, "mouseout" : function(){
+    $(this).css("background","lightblue");
+  }
+});
+
+
+    });
+     
+  </script>
+</body>
+</html>
